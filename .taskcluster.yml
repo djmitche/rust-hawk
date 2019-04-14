@@ -23,7 +23,8 @@ tasks:
           git checkout {{event.head.sha}} &&
           cargo test --features="use_ring" --no-default-features &&
           cargo test --features="use_openssl" --no-default-features &&
-          cargo clippy
+          cargo clippy --features="use_ring" --no-default-features &&
+          cargo clippy --features="use_openssl" --no-default-features
     metadata:
       name: Tests
       description: Run tests
